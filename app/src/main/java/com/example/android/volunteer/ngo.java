@@ -1,7 +1,5 @@
 package com.example.android.volunteer;
 
-import android.graphics.Bitmap;
-
 /**
  * Created by shubham on 7/15/17.
  */
@@ -9,7 +7,7 @@ import android.graphics.Bitmap;
 public class ngo {
     private String mTitle;
     private String mDescription;
-    private Bitmap mImage;
+    private String mImage;
     private String mNgoTitle;
     private int mPeopleRequired;
     private String[] mSkills;
@@ -17,7 +15,7 @@ public class ngo {
     private long mEventDate;
     private long mCreateDate;
 
-    public ngo(String title,String description,Bitmap image,String ngoTitle,int peopleRequired,String[] skills
+    public ngo(String title,String description,String image,String ngoTitle,int peopleRequired,String[] skills
                 ,int[] requirement,long eventDate,long createDate)
     {
         mTitle=title;
@@ -39,7 +37,7 @@ public class ngo {
     {
         return mDescription;
     }
-    public Bitmap getImage()
+    public String getImage()
     {
         return mImage;
     }
