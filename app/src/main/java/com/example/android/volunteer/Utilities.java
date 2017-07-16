@@ -14,6 +14,7 @@ import java.util.ArrayList;
 
 public class Utilities {
 
+
     public static ArrayList<ngo> parse(String json) {
         ArrayList<ngo> values = new ArrayList<ngo>();
 
@@ -26,15 +27,16 @@ public class Utilities {
                 JSONObject ngoInfo = obj.getJSONObject("ngo");
                 String ngoName = ngoInfo.getString("name");
                 String eventDate = obj.getString("eventDate");
+                int id=obj.getInt("id");
 
                 SimpleDateFormat dateParser = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
                 long dateInMilli = dateParser.parse(eventDate).getTime();
                 long posixDate = dateInMilli/1000;
 
                 String imageUrl = obj.getString("image");
-                for (int j=0;j<10;j++)
+                //for (int j=0;j<10;j++)
                 values.add(new ngo(title, desc, imageUrl, ngoName, 10, new String[]{""}
-                        , new int[]{0}, posixDate+864000,System.currentTimeMillis() / 1000L));
+                        , new int[]{0}, posixDate+864000,System.currentTimeMillis() / 1000L,id));
             }
 
 

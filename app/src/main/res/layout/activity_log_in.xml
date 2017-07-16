@@ -41,8 +41,9 @@
         android:layout_height="40dp"
         android:layout_gravity="center"
         android:background="@android:color/white"
-        android:text="Admin"
+        android:hint="Username"
         android:gravity="center"
+        android:textColorHint="@android:color/black"
         android:textColor="@android:color/black"/>
     <EditText
         android:layout_marginTop="20dp"
@@ -50,7 +51,8 @@
         android:layout_height="40dp"
         android:layout_gravity="center"
         android:background="@android:color/white"
-        android:text="123456"
+        android:hint="Password"
+        android:textColorHint="@android:color/black"
         android:gravity="center"
         android:textColor="@android:color/black"/>
 

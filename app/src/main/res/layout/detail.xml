@@ -30,6 +30,7 @@
                 android:orientation="vertical"
                 android:layout_marginLeft="10dp">
                 <TextView
+                    android:id="@+id/dTitle"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
@@ -62,6 +63,7 @@
             />
 
         <TextView
+            android:id="@+id/ldesc"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:textAlignment="center"
@@ -79,18 +81,57 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="18dp"
+            android:textSize="25dp"
             android:text="Perks"
+            android:textStyle="bold"
             android:textAlignment="center"
             android:layout_marginBottom="20dp"
             />
 
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:src="@drawable/appreciation"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/perks"
+            android:textSize="20dp"
+            android:text="@string/appreciation"
             android:textAlignment="center"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp"
+            />
 
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:src="@drawable/notes"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="@string/stipend"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp"
+            />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:src="@drawable/web"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="@string/feature"
+            android:textAlignment="center"
+            android:textStyle="bold"
             />
 
         <View

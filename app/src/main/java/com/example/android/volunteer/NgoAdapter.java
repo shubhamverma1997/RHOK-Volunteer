@@ -24,6 +24,8 @@ import java.util.Date;
 
 public class NgoAdapter extends ArrayAdapter<ngo> {
 
+
+    public int id=0;
     private Context mContext;
     public NgoAdapter(Context context, ArrayList<ngo> data)
     {
@@ -45,7 +47,7 @@ public class NgoAdapter extends ArrayAdapter<ngo> {
             listview= LayoutInflater.from(getContext()).inflate(R.layout.ngo_event_item,parent,false);
         }
 
-        ngo variable=getItem(position);
+        final ngo variable=getItem(position);
 
         TextView title=(TextView) listview.findViewById(R.id.e_name);
         title.setText(variable.getNgoTitle());
@@ -68,7 +70,7 @@ public class NgoAdapter extends ArrayAdapter<ngo> {
         dateString=dateString+" "+sdf.format(d);
         date_time.setText(dateString);
 
-        ImageView image=(ImageView) listview.findViewById(R.id.image);
+        final ImageView image=(ImageView) listview.findViewById(R.id.image);
         Picasso.with(getContext()).load(variable.getImage()).placeholder(R.drawable.demo).error(R.drawable.demo).into(image);
 
         long timeleft=variable.getEventDate()-variable.getCreateDate();
@@ -80,9 +82,16 @@ public class NgoAdapter extends ArrayAdapter<ngo> {
         listview.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                mContext.startActivity(new Intent(mContext, Detail.class));
+                Intent intent=new Intent(mContext, Detail.class);
+
+                id=variable.id;
+                intent.putExtra("desc",variable.getDescription());
+                intent.putExtra("title",variable.getNgoTitle());
+                mContext.startActivity(intent);
             }
         });
+
+        id=variable.id;
 
         return listview;
     }

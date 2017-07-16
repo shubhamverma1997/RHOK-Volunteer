@@ -14,9 +14,10 @@ public class ngo {
     private int[] mRequirement;
     private long mEventDate;
     private long mCreateDate;
+    public int id;
 
     public ngo(String title,String description,String image,String ngoTitle,int peopleRequired,String[] skills
-                ,int[] requirement,long eventDate,long createDate)
+                ,int[] requirement,long eventDate,long createDate,int inputid)
     {
         mTitle=title;
         mDescription=description;
@@ -27,6 +28,7 @@ public class ngo {
         mRequirement=requirement;
         mEventDate=eventDate;
         mCreateDate=createDate;
+        id=inputid;
     }
 
     public String getTitle()

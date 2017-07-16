@@ -1,12 +1,12 @@
 <resources>
     <string name="app_name">Volunteer</string>
-    <string name="perks">
-
-        * Certificate of Appreciation *\n
-        * Stipend *\n
-        * We will feature on our Website *
-
-
-
+    <string name="appreciation">
+        * Certificate of Appreciation *
+    </string>
+    <string name="stipend">
+        * Stipend *
+    </string>
+    <string name="feature">
+        * We will feature you on our Website *
     </string>
 </resources>

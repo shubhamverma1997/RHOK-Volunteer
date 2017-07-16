@@ -1,6 +1,7 @@
 package com.example.android.volunteer;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
@@ -8,8 +9,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class Detail extends AppCompatActivity {
+
 
 
     Context context;
@@ -23,6 +26,15 @@ public class Detail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.detail);
         context = this;
+        Intent recieve=getIntent();
+        String desc=recieve.getStringExtra("desc");
+
+        TextView textView=(TextView) findViewById(R.id.ldesc);
+        textView.setText(desc);
+
+        desc=recieve.getStringExtra("title");
+        TextView title=(TextView) findViewById(R.id.dTitle);
+        title.setText(desc);
 
         applyButton = (Button)findViewById(R.id.apply_button);
 

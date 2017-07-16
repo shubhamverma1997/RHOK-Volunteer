@@ -1,11 +1,15 @@
 package com.example.android.volunteer;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.ListView;
 
 import com.android.volley.Request.Method;
@@ -67,9 +71,25 @@ public class MainActivity extends AppCompatActivity {
 // Adding request to request queue
         VolunteerApp.getInstance().addToRequestQueue(strReq, tag_string_req);
 
+    }
 
+    public boolean onCreateOptionsMenu(Menu menu) {
 
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.options_menu, menu);
+        return true;
+    }
 
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.add:
+                startActivity(new Intent(this, add.class));
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+        //respond to menu item selection
 
     }
 }
