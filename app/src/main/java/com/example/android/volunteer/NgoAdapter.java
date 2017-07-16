@@ -87,6 +87,7 @@ public class NgoAdapter extends ArrayAdapter<ngo> {
                 id=variable.id;
                 intent.putExtra("desc",variable.getDescription());
                 intent.putExtra("title",variable.getNgoTitle());
+                intent.putExtra("imageURL",variable.getImage());
                 mContext.startActivity(intent);
             }
         });

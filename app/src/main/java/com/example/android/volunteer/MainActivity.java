@@ -86,6 +86,8 @@ public class MainActivity extends AppCompatActivity {
             case R.id.add:
                 startActivity(new Intent(this, add.class));
                 return true;
+            case R.id.certificates:
+                startActivity(new Intent(this,Certificates.class));
             default:
                 return super.onOptionsItemSelected(item);
         }

@@ -36,7 +36,7 @@ public class Utilities {
                 String imageUrl = obj.getString("image");
                 //for (int j=0;j<10;j++)
                 values.add(new ngo(title, desc, imageUrl, ngoName, 10, new String[]{""}
-                        , new int[]{0}, posixDate+864000,System.currentTimeMillis() / 1000L,id));
+                        , new int[]{0}, posixDate,System.currentTimeMillis() / 1000L,id));
             }
 
 

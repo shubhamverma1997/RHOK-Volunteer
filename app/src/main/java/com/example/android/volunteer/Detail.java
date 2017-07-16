@@ -9,7 +9,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 public class Detail extends AppCompatActivity {
 
@@ -36,6 +39,10 @@ public class Detail extends AppCompatActivity {
         TextView title=(TextView) findViewById(R.id.dTitle);
         title.setText(desc);
 
+        String imgUrl=recieve.getStringExtra("imageURL");
+        ImageView img=(ImageView) findViewById(R.id.dImg);
+        Picasso.with(this).load(imgUrl).placeholder(R.drawable.demo).error(R.drawable.demo).into(img);
+
         applyButton = (Button)findViewById(R.id.apply_button);
 
         applyButton.setOnClickListener(new OnClickListener() {
@@ -47,7 +54,7 @@ public class Detail extends AppCompatActivity {
                 } else {
                     builder = new AlertDialog.Builder(context);
                 }
-                builder.setTitle("Success").setMessage("You have successfully applied.").show();
+                builder.setTitle("Thanks, Shubham!").setMessage("Someone from the organization will contact you shortly.").show();
 
             }
         });
